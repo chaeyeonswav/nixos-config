@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows =
         "nixpkgs"; # Use system packages list where available
     };
+
+    nil.url = "github:oxalica/nil/2023-08-09";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

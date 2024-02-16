@@ -154,8 +154,6 @@
     auto-optimise-store = true;
   }; 
 
-  programs.nushell.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

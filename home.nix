@@ -14,15 +14,31 @@
 
     programs.firefox.enable = true;
 
+    programs.nushell.enable = true;
+
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         pkief.material-icon-theme
+        eamodio.gitlens
+        GitHub.copilot
       ];
       userSettings = {
         editor.formatOnSave = true;
-        nix.enableLanguageServer = true;
+
+        nix = {
+          enableLanguageSever = true;
+          serverPath = "nil";
+          serverSettings = {
+            nil = {
+              formatting = {
+                command = ["nixpkgs-fmt"]
+              }
+            };
+          };
+        };
+
         workbench.iconTheme = "material-icon-theme";
         git.autofetch = true;
       };
