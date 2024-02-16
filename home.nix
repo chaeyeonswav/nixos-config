@@ -29,18 +29,9 @@
         github.copilot
       ];
       userSettings = {
-        editor.formatOnSave = true;
-
         nix = {
           enableLanguageSever = true;
           serverPath = "nil";
-          serverSettings = {
-            nil = {
-              formatting = {
-                command = ["nixpkgs-fmt"];
-              };
-            };
-          };
         };
 
         workbench.iconTheme = "material-icon-theme";
