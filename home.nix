@@ -22,7 +22,7 @@
         jnoortheen.nix-ide
         pkief.material-icon-theme
         eamodio.gitlens
-        GitHub.copilot
+        github.copilot
       ];
       userSettings = {
         editor.formatOnSave = true;
@@ -33,8 +33,8 @@
           serverSettings = {
             nil = {
               formatting = {
-                command = ["nixpkgs-fmt"]
-              }
+                command = ["nixpkgs-fmt"];
+              };
             };
           };
         };
