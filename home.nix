@@ -3,6 +3,10 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
+  imports = [
+    inputs.nur.hmModules.nur
+  ]
+
   home = {
     username = "koehn";
     homeDirectory = "/home/koehn";
@@ -16,9 +20,14 @@
       userEmail = "koehn40308@gmail.com";
     };
 
-    firefox.enable = true;
     nushell.enable = true;
     home-manager.enable = true;
+    gh.enable = true;
+
+    firefox = {
+      enable = true;
+
+    };
 
     vscode = {
       enable = true;
