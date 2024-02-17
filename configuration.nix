@@ -19,6 +19,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.hostName = "aesthetic";
 
   # Set your time zone.
   time.timeZone = "America/New_York";

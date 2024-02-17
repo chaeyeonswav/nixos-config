@@ -16,7 +16,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.aesthetic = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."aesthetic" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # Import the previous configuration.nix we used,

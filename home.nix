@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -41,7 +41,11 @@
         };
 
         workbench.iconTheme = "material-icon-theme";
-        git.autofetch = true;
+
+        git = {
+          confirmSync = false;
+          autofetch = true;
+        };
       };
     };
   };
