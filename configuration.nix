@@ -162,7 +162,6 @@
      wget
      git
      nh
-     nixos-shell
    #  gnomeExtensions.syncthing-indicator
   ];
 
