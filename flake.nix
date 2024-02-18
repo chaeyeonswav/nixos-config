@@ -12,14 +12,10 @@
     };
 
     nil.url = "github:oxalica/nil/2023-08-09";
-    
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nur.url = github:nix-community/NUR;
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs: {
     nixosConfigurations."aesthetic" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -36,6 +32,7 @@
               };
             };
           }
+        nur.nixosModules.nur
       ];
     };
   };

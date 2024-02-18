@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 { 
   programs.firefox = {
@@ -6,7 +6,7 @@
       profiles.default = {
         id = 0;
         name = "koehn";
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        extensions =  with inputs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           onepassword-password-manager
         ];
@@ -60,18 +60,28 @@
 
         bookmarks = [
           {    
-            name = "X";    
-            tags = [ "socials" ];    
-            keyword = "x";    
-            url = "https://twitter.com/home";  
-          }
-          {    
-            name = "Last.FM";    
-            tags = [ "socials" ];    
-            keyword = "lastfm";    
-            url = "https://www.last.fm/user/chaeyeonswavv";  
+            name = "Socials";    
+            toolbar = true;    
+            bookmarks = 
+            [      
+              {    
+                name = "X";    
+                tags = [ "socials" ];    
+                keyword = "x";    
+                url = "https://twitter.com/home";  
+              }
+              {    
+                name = "Last.FM";    
+                tags = [ "socials" ];    
+                keyword = "lastfm";    
+                url = "https://www.last.fm/user/chaeyeonswavv";  
+              }
+            ];  
           }
         ];
+        settings = {
+          "browser.bookmarks.addedImportButton" = false;
+        };
       };
     };
 }
