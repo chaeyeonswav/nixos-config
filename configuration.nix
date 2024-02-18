@@ -4,7 +4,21 @@
 
 { config, pkgs, ... }:
 
-{
+
+let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+  lock-empty-string = {
+    Value = "";
+    Status = "locked";
+  };
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -107,7 +121,34 @@
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  }; 
+  };
+
+  programs.firefox = {
+    enable = true;
+
+    policies = {
+      Preferences = {
+        "browser.newtabpage.activity-stream.showSponsored" = lock-false;
+        "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+      };
+
+      ExtensionSettings = {
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
+        };
+        "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4232852/1password_x_password_manager-2.20.2.xpi";
+          installation_mode = "force_installed";
+        };
+        "jid1-MnnxcxisBPnSXQ@jetpack" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
+    };
+  };
 
 #  services = {
  #   syncthing = {
