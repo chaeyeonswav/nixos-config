@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}: 
 
 { 
   programs.firefox = {
@@ -6,10 +10,6 @@
       profiles.default = {
         id = 0;
         name = "koehn";
-        # extensions =  with config.nur.repos.rycee.firefox-addons; [
-        #   ublock-origin
-        #   onepassword-password-manager
-        # ];
         search.force = true;
         search.engines = {
           "Home Manager NixOs" = {
