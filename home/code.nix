@@ -20,6 +20,7 @@
       git = {
         confirmSync = false;
         autofetch = true;
+        enableSmartCommit = true;
       };
     };
   };
