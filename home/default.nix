@@ -15,7 +15,7 @@
   programs = {
     git = {
       enable = true;
-      userName = "koehnnnn";
+      userName = "chaeyeonswav";
       userEmail = "koehn40308@gmail.com";
     };
 
