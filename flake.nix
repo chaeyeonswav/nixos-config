@@ -12,7 +12,11 @@
     };
 
     nil.url = "github:oxalica/nil/2023-08-09";
-    nur.url = "github:nix-community/NUR";
+    
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -28,7 +32,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users = {
-                koehn = import ./home.nix;
+                koehn = import ./home/default.nix;
               };
             };
           }
