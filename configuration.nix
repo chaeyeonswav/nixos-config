@@ -68,11 +68,9 @@ in {
   services.xserver = {
     enable = true;
     displayManager = {
-      gdm.enable = true;
-      gdm.wayland = false;
-      autoLogin = {
+      gdm = {
         enable = true;
-        user = "koehn";
+        wayland = false;
       };
     };
     desktopManager.gnome.enable = true;
@@ -238,6 +236,7 @@ in {
      element-desktop
      gnome.gnome-tweaks
      gnomeExtensions.kimpanel
+     comma
     #  nur.repos.rycee.firefox-addons
   ];
 
