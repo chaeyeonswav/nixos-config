@@ -22,5 +22,6 @@
     nushell.enable = true;
     home-manager.enable = true;
     gh.enable = true;
+    fish.enable = true;
   };
 }

@@ -64,6 +64,8 @@ in {
     };
   };
 
+ hardware.bluetooth.enable = true;
+ hardware.bluetooth.powerOnBoot = true;
 
   services.xserver = {
     enable = true;
@@ -112,9 +114,10 @@ in {
       spotify
       localsend
       steam
+      wpsoffice
 #      vscode
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
   };
   
   fonts = {
@@ -151,6 +154,8 @@ in {
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
+
+  programs.fish.enable = true;
 
   programs.firefox = {
     enable = true;
@@ -236,7 +241,6 @@ in {
      element-desktop
      gnome.gnome-tweaks
      gnomeExtensions.kimpanel
-     comma
     #  nur.repos.rycee.firefox-addons
   ];
 
