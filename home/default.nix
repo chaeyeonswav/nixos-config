@@ -10,7 +10,7 @@
     stateVersion = "23.11";
   };
 
-  imports = [ ./firefox.nix ];
+  imports = [ ./firefox.nix ./code.nix ./xfce.nix ];
 
   programs = {
     git = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 { 
   programs.vscode = {
@@ -22,6 +22,8 @@
         autofetch = true;
         enableSmartCommit = true;
       };
+
+      window.customTitleBarVisibility = "auto";
     };
   };
 }

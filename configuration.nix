@@ -120,7 +120,8 @@ in {
       localsend
       steam
       wpsoffice
-#      vscode
+      vscode
+      warp-terminal
     ];
     shell = pkgs.fish;
   };
@@ -138,21 +139,6 @@ in {
       proggyfonts
     ];
   };
-
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    epiphany # web browser
-    geary # email reader
-    evince # document viewer
-    gnome-characters
-    totem # video player
-    tali # poker game
-    iagno # go game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
 
   programs.steam = {
     enable = true;
@@ -246,6 +232,8 @@ in {
      element-desktop
      gnome.gnome-tweaks
      gnomeExtensions.kimpanel
+     papirus-icon-theme
+     zuki-themes
     #  nur.repos.rycee.firefox-addons
   ];
 
