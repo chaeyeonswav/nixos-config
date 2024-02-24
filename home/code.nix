@@ -5,9 +5,10 @@
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
-      pkief.material-icon-theme
       eamodio.gitlens
       github.copilot
+      catppuccin.catppuccin-vsc-icons
+      catppuccin.catppuccin-vsc
     ];
     userSettings = {
       nix = {
@@ -15,7 +16,10 @@
         serverPath = "nil";
       };
 
-      workbench.iconTheme = "material-icon-theme";
+      workbench = {
+        iconTheme = "catppuccin-mocha";
+        colorTheme = "Catppuccin Mocha";
+      };
 
       git = {
         confirmSync = false;
@@ -23,7 +27,7 @@
         enableSmartCommit = true;
       };
 
-      window.customTitleBarVisibility = "auto";
+      window.titleBarStyle = "custom";
     };
   };
 }
