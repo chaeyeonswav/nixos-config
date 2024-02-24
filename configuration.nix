@@ -121,7 +121,6 @@ in {
       steam
       wpsoffice
       vscode
-      warp-terminal
     ];
     shell = pkgs.fish;
   };
