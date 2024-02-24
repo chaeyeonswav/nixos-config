@@ -23,5 +23,11 @@
     home-manager.enable = true;
     gh.enable = true;
     fish.enable = true;
+
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+      options = [ "--cmd cd" ];
+    };
   };
 }
