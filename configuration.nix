@@ -70,12 +70,17 @@ in {
   services.xserver = {
     enable = true;
     displayManager = {
-      gdm = {
-        enable = true;
-        wayland = false;
-      };
+     # gdm = {
+      #  enable = true;
+      #  wayland = false;
+     # };
+     defaultSession = "xfce";
     };
-    desktopManager.gnome.enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+      gnome.enable = true;
+    };
     videoDrivers = [ "nvidia" ];
   };
 
