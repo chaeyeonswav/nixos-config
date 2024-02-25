@@ -27,7 +27,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users = {
-                koehn = import ./home/default.nix;
+                koehn = import ./modules/home/default.nix;
               };
             };
           }

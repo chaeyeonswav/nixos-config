@@ -19,11 +19,6 @@ let
     Status = "locked";
   };
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
@@ -63,29 +58,6 @@ in {
       fcitx5.addons = with pkgs; [ fcitx5-mozc fcitx5-hangul fcitx5-gtk ];
     };
   };
-
- hardware.bluetooth.enable = true;
- hardware.bluetooth.powerOnBoot = true;
-
-  services.xserver = {
-    enable = true;
-    displayManager = {
-     # gdm = {
-      #  enable = true;
-      #  wayland = false;
-     # };
-     defaultSession = "xfce";
-    };
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = true;
-      gnome.enable = true;
-    };
-    videoDrivers = [ "nvidia" ];
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -186,22 +158,6 @@ in {
    # };
  #  };
 
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
-  };
-
   nixpkgs.config = {
     # packageOverrides = pkgs: {
     #   nur = import (builtins.fetchTarball {
@@ -231,8 +187,6 @@ in {
      element-desktop
      gnome.gnome-tweaks
      gnomeExtensions.kimpanel
-     papirus-icon-theme
-     zuki-themes
     #  nur.repos.rycee.firefox-addons
   ];
 
